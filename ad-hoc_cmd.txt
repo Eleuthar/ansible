@@ -1,0 +1,12 @@
+
+# ansible -i hosts all -m ping --limit host5
+	\\ send ping cmd only to "host5"
+
+
+# ansible -i hosts all -m copy -a "src=/root/ans_dir/testfile dest=/tmp/testfile"
+	\\ copy testfile 
+
+
+-m  = define command (ansible module)
+
+-a = command arguments

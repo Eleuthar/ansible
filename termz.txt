@@ -1,0 +1,21 @@
+
+INVENTORY FILE
+	\\ store client details = hostname, IP, ssh port
+
+
+HANDLER
+	\\ task called only if notifier is present
+	\\ if multiple notifiers trigger a handler, the handler is run only once after all tasks are complete
+
+
+NOTIFIER
+	\\ call handler if output is changed
+	\\ i.e. a configuration file is changed, notify a handler to run a task
+
+
+TAG
+	\\ task name which can be used later for that specific task
+
+
+ansible_<variable>
+	\\ properties gathered with "gather_facts" option, used in conjuction with "when:"

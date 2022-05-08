@@ -1,0 +1,20 @@
+
+---
+
+- hosts: group2
+  tasks:
+  - name: Enable SELinux
+    selinux:
+	  state: enabled
+	when: ansible_os_family == 'Debian'
+
+  - debug:	
+ 	  msg: "SELinux enabled, go rr" 
+	when: enable_selinux.changed == true
+	
+  - name: sshd config file modify port
+	lineinfile:
+	  path: /etc/ssh/sshd_config
+	  regexp: 'Port 28765'
+	  line: '#Port 22'
+
